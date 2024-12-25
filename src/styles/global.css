@@ -138,6 +138,12 @@
     .class-link-hover{
       @apply font-medium  transform ;
     }
+    .class-link-alt{
+      @apply  underline transition-all duration-200;
+    }
+    .class-link-alt-hover{
+      @apply font-medium text-green transform ;
+    }
   }
 }
 

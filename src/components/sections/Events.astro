@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+
+const cards = [
+  {
+    index: 0,
+    title: "Das Bootcamp",
+    description:
+      "The Ultimate Bootcamp that no one is expecting from this club, coming soon.",
+    link: "https://github.com/IT-site",
+    isLinked: true,
+  },
+  {
+    index: 1,
+    title: "Local Restaurant",
+    description:
+      "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
+    link: "https://google.com",
+    isLinked: false,
+  },
+];
+
+import larrow from "../../assets/icon3.svg";
+import SectionTitle from "../ui/SectionTitle.astro";
+import { fade } from "astro:transitions";
+
+const isNew = true;
+const str1 = isNew
+  ? "grid lg:grid-cols-2 gap-2"
+  : "flex flex-col  lg:flex-row ";
+---
+
+<Section id="events">
+  <SectionTitle
+    sectionTitle="Upcoming Events"
+    description=""
+    isDescription={false}
+    cln="mt-20"
+  />
+  <div class=`${str1} justify-between rounded-[45px] p-1`>
+    {
+      cards.map((card) => (
+        <Card>
+          <div class="flex h-full bg-dark text-gray rounded-[45px] m-[1px] p-[60px]">
+            <div class="flex flex-col gap-5">
+              <h4 class="font-semibold">{card.title}</h4>
+              <p>{card.description}</p>
+              {card.isLinked && (
+                <a href={card.link} class="flex items-center gap-[15px]">
+                  <span class="text-green">Case Info</span>
+                  <picture>
+                    <Image src={larrow} alt="Arrow pointing up right" />
+                  </picture>
+                </a>
+              )}
+            </div>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</Section>

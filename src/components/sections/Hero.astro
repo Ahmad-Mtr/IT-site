@@ -2,6 +2,9 @@
 import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import HeroIlust from "../../assets/pics/hero.svg";
+
+// Modified Utility Classes for adapting the layout to the hidden sponsors section
+// switch the value of isSponsors to true if you want to display the sponsors section
 const isSponsors = false;
 const falseSponsorsClasses = isSponsors
   ? "md:pb-20 md:pt-10"
