@@ -1,6 +1,6 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
-import ServiceCard from "../ui/ServiceCard.astro";
+import TeamsCard from "../ui/TeamsCard.astro";
 import Section from "./Section.astro";
 
 import c1 from "../../assets/pics/card-pic1.png";
@@ -12,73 +12,69 @@ import c6 from "../../assets/pics/card-pic6.png";
 
 const cards = [
   {
-    index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
+    index: 3,
+    title: "Astrolabe",
+    description: "Coming Soon...",
     img: c1,
-    alt: "SEO",
+    alt: "astrolabe-gju",
     link: "https://google.com",
   },
   {
-    index: 2,
-    titleTop: "Pay-per-click",
-    titleBottom: "advertising",
+    index: 1,
+    title: "Competitive Programming",
+    description:
+      "A team dedicated to participating and winning in local and global competitions in all fields!",
     img: c2,
     alt: "SEO",
     link: "https://google.com",
   },
   {
-    index: 3,
-    titleTop: "Social Media",
-    titleBottom: "Marketing",
-    img: c3,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
     index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
+    title: "Communications",
+    description:
+      "Communicating with all parties involved in events and helping all with their inquiries. ",
     img: c4,
-    alt: "SEO",
+    alt: "communications",
     link: "https://google.com",
   },
   {
     index: 2,
-    titleTop: "Content",
-    titleBottom: "Creation",
-    img: c5,
-    alt: "SEO",
+    title: "Social Media",
+    description:
+      "Adminstrating social media pages and always being there to capture moments during events to inspire others!",
+    img: c3,
+    alt: "social-media",
     link: "https://google.com",
   },
+
   {
     index: 3,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
+    title: "AI/ML & Data Science",
+    description: "Tracking your life and making a profit out of it!",
     img: c6,
-    alt: "SEO",
+    alt: "ai",
     link: "https://google.com",
   },
 ];
 
 const description =
-  "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include";
+  "Meet the passsionate teams driving innovation at IT Club GJU.";
 ---
 
-<Section id="services">
+<Section id="teams">
   <div class="mt-[140px] mb-5">
     <SectionTitle
-      sectionTitle="Services"
+      sectionTitle="Teams"
       description={description}
-      isDescription={true}
+      isDescription={false}
     />
     <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
       {
         cards.map((card) => (
-          <ServiceCard
+          <TeamsCard
             index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
+            title={card.title}
+            description={card.description}
             img={card.img}
             alt={card.alt}
             link={card.link}
