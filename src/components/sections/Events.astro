@@ -22,7 +22,7 @@ const cards = [
   },
 ];
 
-import larrow from "../../assets/icon3.svg";
+import larrow from "../../assets/icon3-yellow.svg";
 import SectionTitle from "../ui/SectionTitle.astro";
 import { fade } from "astro:transitions";
 
@@ -49,7 +49,7 @@ const str1 = isNew
               <p>{card.description}</p>
               {card.isLinked && (
                 <a href={card.link} class="flex items-center gap-[15px]">
-                  <span class="text-green">Case Info</span>
+                  <span class="text-yellow">Event Info</span>
                   <picture>
                     <Image src={larrow} alt="Arrow pointing up right" />
                   </picture>

@@ -105,7 +105,7 @@
       @apply bg-dark text-white rounded-lg px-[35px] py-5 transition-all duration-200;
     }
     .btn-primary:hover {
-      @apply bg-green text-black transform scale-105;
+      @apply bg-yellow text-black transform scale-105;
     }
 
     .btn-secondary {
@@ -116,7 +116,7 @@
     }
 
     .btn-tertiary {
-      @apply bg-green text-black rounded-lg px-[35px] py-5 transition-all duration-200;
+      @apply bg-yellow text-black rounded-lg px-[35px] py-5 transition-all duration-200;
     }
     .btn-tertiary:hover {
       @apply bg-white text-black transform scale-105;
@@ -133,7 +133,7 @@
       @apply bg-yellow text-black rounded-[7px] px-[7px];
     }
     .astrohead {
-      @apply bg-white text-black rounded-[7px] px-[7px];
+      @apply bg-[#FDE68A] text-black rounded-[7px] px-[7px];
     }
 
     .blackhead {
@@ -149,7 +149,7 @@
       @apply  underline transition-all duration-200;
     }
     .class-link-alt-hover{
-      @apply font-medium text-green transform ;
+      @apply font-medium text-yellow transform ;
     }
   }
 }
