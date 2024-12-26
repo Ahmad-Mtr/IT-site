@@ -41,6 +41,7 @@ const { index, title, description, img, alt, link, isLinked } = Astro.props;
       />
     </picture>
     {/* Learn more */}
+    {!isLinked && <div class="flex items-end z-10"></div>}
     {isLinked && <div class="flex items-end">
       <a href={link} class="flex items-center gap-3.5"
         ><Image src={index === 1 || index === 2 ? yob : wob} alt={alt} />
@@ -71,6 +72,7 @@ const { index, title, description, img, alt, link, isLinked } = Astro.props;
       />
     </picture>
     {/* Learn more */}
+    {!isLinked && <div class="flex items-end z-10"></div>}
     { isLinked && <div class="flex items-end z-10">
       <a href={link} class="flex items-center gap-3.5"
         ><Image src={aob} alt={alt} />
