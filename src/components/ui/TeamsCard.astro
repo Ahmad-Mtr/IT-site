@@ -15,7 +15,7 @@ import StarsBackground from "./StarsBackground.astro";
 
 // Yellow/white/black heads are the highlights of the card
 
-const { index, title, description, img, alt, link } = Astro.props;
+const { index, title, description, img, alt, link, isLinked } = Astro.props;
 ---
 
 <Card isUnderline={true}>
@@ -41,12 +41,12 @@ const { index, title, description, img, alt, link } = Astro.props;
       />
     </picture>
     {/* Learn more */}
-    <div class="flex items-end">
+    {isLinked && <div class="flex items-end">
       <a href={link} class="flex items-center gap-3.5"
         ><Image src={index === 1 || index === 2 ? yob : wob} alt={alt} />
         <span class="hidden sm:block">Learn More</span></a
       >
-    </div>
+    </div>}
   </div> ) : (
   <div
     class='h-[300px] relative w-full overflow-hidden sm:h-full lg:gap-[60px] grid custom-grid lg:grid-cols-2 lg:grid-rows-1 p-8 sm:p-[50px] rounded-[45px] bg-[#1c0e30] text-gray'
@@ -71,12 +71,12 @@ const { index, title, description, img, alt, link } = Astro.props;
       />
     </picture>
     {/* Learn more */}
-    <div class="flex items-end z-10">
+    { isLinked && <div class="flex items-end z-10">
       <a href={link} class="flex items-center gap-3.5"
         ><Image src={aob} alt={alt} />
         <span class="hidden sm:block text-[#bac2de]">Learn More</span></a
       >
-    </div>
+    </div> }
   </div>
 
   )}

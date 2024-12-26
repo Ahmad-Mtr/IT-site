@@ -149,7 +149,7 @@
       @apply  underline transition-all duration-200;
     }
     .class-link-alt-hover{
-      @apply font-medium text-yellow transform ;
+      @apply font-medium bg-yellow text-black rounded-[7px] px-[7px] transform ;
     }
   }
 }

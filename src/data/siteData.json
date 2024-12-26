@@ -1,8 +1,8 @@
 {
   "title": "GJU IT Club",
-  "description": "Positivus is a simple and minimalistic blog theme for Ghost. It is designed to be a perfect starting point for your blog project.",
+  "description": "GJU IT Club is a student club at the German Jordanian University, which aims to provide students with the necessary skills and knowledge to excel in the IT field.",
   "image": {
-    "src": "https://github.com/manulthanura/Positivus/raw/main/public/cover.png",
-    "alt": "Positivus"
+    "src": "https://github.com/Ahmad-Mtr/IT-site/raw/main/public/cover.png",
+    "alt": "IT Club"
   }
 }

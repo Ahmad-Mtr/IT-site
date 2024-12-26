@@ -18,16 +18,18 @@ const cards = [
     description: "Coming Soon...",
     img: astrolabe,
     alt: "astrolabe-gju",
-    link: "https://google.com",
+    link: "https://github.com/Ahmad-Mtr/IT-site",
+    isLinked: false,
   },
   {
     index: 1,
     title: "Competitive Programming",
     description:
-      "A team dedicated to participating and winning in local and global competitions in all fields!",
+      "Participating and winning in various competitions in all fields!",
     img: competitive,
-    alt: "SEO",
+    alt: "competitive-programming",
     link: "https://google.com",
+    isLinked: false,
   },
   {
     index: 1,
@@ -37,6 +39,7 @@ const cards = [
     img: c4,
     alt: "communications",
     link: "https://google.com",
+    isLinked: false,
   },
   {
     index: 2,
@@ -46,6 +49,7 @@ const cards = [
     img: c3,
     alt: "social-media",
     link: "https://google.com",
+    isLinked: false,
   },
 
   {
@@ -53,8 +57,9 @@ const cards = [
     title: "AI/ML & Data Science",
     description: "Tracking your life and making a profit out of it!",
     img: c6,
-    alt: "ai",
+    alt: "ai-ml-data-science",
     link: "https://google.com",
+    isLinked: false,
   },
 ];
 
@@ -79,6 +84,7 @@ const description =
             img={card.img}
             alt={card.alt}
             link={card.link}
+            isLinked={card.isLinked}
           />
         ))
       }
