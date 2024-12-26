@@ -29,6 +29,7 @@
   }
 
   :root {
+    --yellow: #fde047;
     --green: #b9ff66;
     --black: rgb(0, 0, 0);
     --dark: #191a23;
@@ -126,6 +127,12 @@
     }
 
     .whitehead {
+      @apply bg-white text-black rounded-[7px] px-[7px];
+    }
+    .yellowhead {
+      @apply bg-yellow text-black rounded-[7px] px-[7px];
+    }
+    .astrohead {
       @apply bg-white text-black rounded-[7px] px-[7px];
     }
 

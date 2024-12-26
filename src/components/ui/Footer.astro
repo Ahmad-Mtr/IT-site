@@ -1,16 +1,18 @@
 ---
 import { Image } from "astro:assets";
-import Facebook from "../../assets/facebook.svg";
+import Github from "../../assets/github.svg";
+import Discord from "../../assets/discord.svg";
 import Linkedin from "../../assets/linkedin.svg";
-import Logo from "../../assets/logo-alt.svg";
-import Twitter from "../../assets/twitter.svg";
+import Instagram from "../../assets/instagram.svg";
+// import Logo from "../../assets/logo-alt.svg";
+import Logo from "../../assets/it-logo-alt.svg";
 import ShortForm from "../ui/ShortForm.astro";
 
 const currentYear = new Date().getFullYear();
 const logos = [
   {
     name: "Github",
-    src: Facebook,
+    src: Github,
     link: "https://github.com/Ahmad-Mtr/IT-site",
   },
   {
@@ -20,12 +22,12 @@ const logos = [
   },
   {
     name: "Discord",
-    src: Facebook,
+    src: Discord,
     link: "https://discord.gg/cFCzxjD3gJ",
   },
   {
     name: "Instagram",
-    src: Facebook,
+    src: Instagram,
     link: "https://www.instagram.com/gju_itclub/",
   },
 ];
@@ -51,7 +53,7 @@ const links = [
         >
           <picture>
             <a href="#home">
-              <Image src={Logo} alt="Logo for Kreatif Brand" />
+              <Image src={Logo} alt="Logo for IT Club" />
             </a>
           </picture>
           <ul class="flex flex-col sm:flex-row gap-5">

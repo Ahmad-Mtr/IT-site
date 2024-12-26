@@ -4,6 +4,7 @@ import Card from "./Card.astro";
 
 import gob from "../../assets/icon6.svg";
 import wob from "../../assets/icon7.svg";
+import StarsBackground from "./StarsBackground.astro";
 
 /* 
 1. Gray card with green title and green on black icon 
@@ -11,14 +12,18 @@ import wob from "../../assets/icon7.svg";
 3. Black card with gray title and gray on black icon
 */
 
+// Green/white/black heads are the highlights of the card
+
 const { index, title, description, img, alt, link } = Astro.props;
 ---
 
 <Card isUnderline={true}>
+  {index != 4 ? (
   <div
     class=`h-[300px] w-full sm:h-full lg:gap-[60px] grid custom-grid lg:grid-cols-2 lg:grid-rows-1 p-8 sm:p-[50px] rounded-[45px] ${index === 1 ? 'bg-gray' : index === 2 ? 'bg-green' : 'bg-dark text-gray'}`
   >
-    <div class=`flex flex-col col-span-2 lg:col-span-1 gap-y-6`>
+    {/* Highlight */}
+    <div class=`flex flex-col col-span-2 lg:col-span-1 gap-y-6`> 
       <span
         class=`w-[fit-content] text-xl font-medium ${index === 1 ? 'greenhead' : 'whitehead'}`
         >{title}</span
@@ -34,17 +39,98 @@ const { index, title, description, img, alt, link } = Astro.props;
         class="h-[100px] w-auto sm:h-auto sm:w-3/4 object-cover"
       />
     </picture>
+    {/* Learn more */}
     <div class="flex items-end">
       <a href={link} class="flex items-center gap-3.5"
         ><Image src={index === 1 || index === 2 ? gob : wob} alt={alt} />
         <span class="hidden sm:block">Learn More</span></a
       >
     </div>
+  </div> ) : (
+  <div
+    class='h-[300px] relative w-full overflow-hidden sm:h-full lg:gap-[60px] grid custom-grid lg:grid-cols-2 lg:grid-rows-1 p-8 sm:p-[50px] rounded-[45px] bg-[#1c0e30] text-gray'
+  >
+    <StarsBackground/>
+    {/* <div class="stars inset-0"></div> */}
+    {/* Highlight */}
+    <div class=`flex flex-col col-span-2 lg:col-span-1 gap-y-6 z-10`> 
+      <span
+        class='w-[fit-content] text-xl font-medium astrohead'
+        >{title}</span
+      >
+      <span class=`w-[fit-content] `>{description}</span>
+    </div>
+    <picture
+      class="w-full h-full row-span-1 order-1 lg:order-none lg:row-span-2 z-10 flex justify-center items-center"
+    >
+      <Image
+        src={img}
+        alt={alt}
+        class="h-[100px] w-auto sm:h-auto sm:w-3/4 object-cover"
+      />
+    </picture>
+    {/* Learn more */}
+    <div class="flex items-end z-10">
+      <a href={link} class="flex items-center gap-3.5"
+        ><Image src={index === 1 || index === 2 ? gob : wob} alt={alt} />
+        <span class="hidden sm:block">Learn More</span></a
+      >
+    </div>
   </div>
+
+  )}
 </Card>
 
 <style>
   .custom-grid {
     grid-template: auto auto;
   }
+  /* Container for the card and stars */
+.card-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #000; /* Optional: A solid color for better contrast */
+}
+
+/* Starry background */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white, rgba(255, 255, 255, 0)) 1px 1px,
+              black;
+  background-size: 50px 50px; /* Adjust to control star density */
+  animation: move-stars 20s linear infinite;
+}
+
+/* Card styling */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes move-stars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
 </style>
