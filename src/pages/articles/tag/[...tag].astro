@@ -1,40 +1,75 @@
 ---
 import MainLayout from "../../../layouts/MainLayout.astro";
 import ArticleCard from "../../../components/ui/ArticleCard.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { capitalize } from "../../../utils";
 
-const { tag } = Astro.params;
+// Generate static paths for the dynamic route
+export async function getStaticPaths() {
+  const allBlogArticles = await getCollection("blog");
+  const tags = new Set();
 
-if(tag === undefined) {
-  throw new Error('Tag is required');
+  // Extract all unique tags from blog articles
+  allBlogArticles.forEach((article) => {
+    if (article.data.tags) {
+      article.data.tags.forEach((tag) => tags.add(tag));
+    }
+  });
+
+  // Return paths for each unique tag
+  return Array.from(tags).map((tag) => ({
+    params: { tag }, // Dynamic route expects a single tag (string)
+  }));
 }
 
-const allBlogArticles: CollectionEntry<'blog'>[] = (await getCollection('blog'))
-  .sort((a:CollectionEntry<'blog'>, b:CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const tag = typeof Astro.params.tag === "string" ? Astro.params.tag : null;
 
-const tagArticles = allBlogArticles.filter(article => article.data.tags.includes(tag));
+if (tag === null) {
+  throw new Error("Tag is required");
+}
+
+const allBlogArticles: CollectionEntry<"blog">[] = (
+  await getCollection("blog")
+).sort(
+  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const tagArticles = allBlogArticles.filter((article) =>
+  article.data.tags.includes(tag)
+);
 ---
 
 <MainLayout title="Search Results">
-	<main class="space-y-20">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
+  <main class="space-y-20">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
+      <a
+        href="/articles"
+        class="inline-flex items-center font-medium text-black hover:text-green my-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 16l-4-4m0 0l4-4m-4 4h18"
+          >
+          </path>
+        </svg>
+        <span class="ml-1 font-bold text-lg">All Articles</span>
+      </a>
 
-          <a href="/articles" class="inline-flex items-center font-medium text-black hover:text-green my-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18">
-                </path>
-            </svg>
-            <span class="ml-1 font-bold text-lg">All Articles</span>
-          </a>
-
-          <h2 class="text-2xl pb-3">#{capitalize(tag)}</h2>
-          <div class="grid gap-8 lg:grid-cols-2">
-            {tagArticles.map(article => (
-              <ArticleCard article={article} />
-            ))}
-          </div>  
+      <h2 class="text-2xl pb-3">#{capitalize(tag)}</h2>
+      <div class="grid gap-8 lg:grid-cols-2">
+        {tagArticles.map((article) => <ArticleCard article={article} />)}
       </div>
-	</main>
+    </div>
+  </main>
 </MainLayout>
