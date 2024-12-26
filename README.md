@@ -1,4 +1,4 @@
-# Positivus - Digital Marketing Agency Landing Page
+# IT Club Site Landing Page
 "GJU IT Club Site" - Built with clean, modern aesthetics and leveraging the power of Astro and Tailwind, it showcases your club's activities, projects, and events, fostering collaboration and knowledge sharing among members.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5546baf-931c-487e-b329-5b1c9e337bbb/deploy-status)](https://app.netlify.com/sites/itclubgju/deploys)
