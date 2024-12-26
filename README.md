@@ -1,26 +1,13 @@
 # Positivus - Digital Marketing Agency Landing Page
+"GJU IT Club Site" - Built with clean, modern aesthetics and leveraging the power of Astro and Tailwind, it showcases your club's activities, projects, and events, fostering collaboration and knowledge sharing among members.
 
-Introducing "Positivus" - a stunning and versatile Astro theme designed for digital marketing agencies.
-
-Built with clean, modern aesthetics and leveraging the power of Astro and Tailwind, Positivus empowers you to craft a captivating website that showcases your agency's expertise and fosters trust with potential clients.
-
-[![Static Badge](https://img.shields.io/badge/UI%2FUX-Olga-blue)](https://www.figma.com/@olgaaverchenko) [![View Demo](https://img.shields.io/badge/Develop-Manul_Thanura-red)](https://lk.linkedin.com/in/manulthanura)
-[![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://positivustheme.vercel.app)
-[![Static Badge](https://img.shields.io/badge/Astro-orange)](https://astro.build/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e5546baf-931c-487e-b329-5b1c9e337bbb/deploy-status)](https://app.netlify.com/sites/itclubgju/deploys)
 
 ![Cover](./public/cover.png)
 
-## Theme Features
+## Contributions
+All Contributions are welcome and encouraged. 
 
-Leveraging the power of Astro and Tailwind CSS, Positivus offers:
-
-- Clean and modern design.
-- SEO-friendly.
-- Multiple Layouts.
-- Seamless Navigation.
-- Pre-built Sections.
-- Customizable Components.
-- Mobile-Responsiveness.
 
 ## 🚀 Project Structure
 
@@ -52,3 +39,6 @@ Feel free to check [Astro documentation](https://docs.astro.build) or jump into 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Credits
+This project was made using [Positivus](https://github.com/manulthanura/Positivus) Theme, along with Graphics from [Storyset](https://storyset.com) and Icons from [Iconify](https://icon-sets.iconify.design/)
