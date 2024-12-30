@@ -24,7 +24,7 @@ The primary goal of our website is to provide a platform where members and poten
 ## Choosing the Right Tools
 To bring our vision to life, we chose to use **Astro** and **Tailwind CSS** as our primary development tools.
 
-- *[Astro](https://astro.build)* is a modern static site generator that allows us to build fast and efficient websites. Its component-based architecture made it easy for us to create reusable components for different sections of our site, furthermore, its kind community made really fast to create this Site via Themes, we've personally used a one called *[Positivus](https://github.com/manulthanura/Positivus)* to launch this in the shortest time possible.
+- *[Astro](https://astro.build)* is a modern Framework that allows us to build fast and efficient websites. Its component-based architecture made it easy for us to create reusable components for different sections of our site, furthermore, its kind community made really fast to create this Site via Themes, we've personally used a one called *[Positivus](https://github.com/manulthanura/Positivus)* to launch this in the shortest time possible.
 
 - *[Tailwind CSS](https://tailwindcss.com/)* provided us with a utility-first approach to styling, enabling us to design a visually appealing layout without compromising on performance. The flexibility of Tailwind allowed us to customize our site extensively while maintaining a consistent look and feel.
 
