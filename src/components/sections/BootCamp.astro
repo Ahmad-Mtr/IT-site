@@ -1,0 +1,55 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import HeroIlust from "../../assets/pics/cat.gif";
+---
+
+<Section id="bootcamp">
+  <div
+    class="relative flex flex-col-reverse items-center md:flex-row mt-5"
+    id="hero"
+  >
+    <div class="row items-center py-5 md:w-7/12">
+      <div class="text-left space-y-3">
+        <h1 class="text-4xl font-medium leading-none md:text-6xl text-left">
+          🚀 Level Up Your Skills with our Bootcamp
+        </h1>
+        <p
+          class="mt-6 mb-8 text-lg font-normal leading-7 sm:mb-12 text-left md:pr-12"
+        >
+          Join us for an epic online bootcamp packed with hands-on learning.
+          Aimed at junior levels, this is your chance to dive deep into a field
+          and come out with certified awesomeness, it's going to be challenging
+          but rewarding.
+        </p>
+        <div
+          class="w-full justify-start items-start inline-flex flex-col pt-0 md:pt-0"
+        >
+          <ul class="space-y-1 pb-6">
+            <li>
+              <span class="font-medium">📅 When:</span> 02.Feb - 16.Feb (can be updated)
+            </li>
+            <li>
+              <span class="font-medium">📍 Where:</span> Online (Discord, link at
+              page's bottom)
+            </li>
+          </ul>
+          <a
+            href="#contact"
+            target="_blank"
+            class="px-8 py-5 bg-zinc-900 hover:bg-white rounded-2xl text-center text-white hover:text-black transition-all duration-200 hover:transform hover:scale-105 border text-xl font-normal leading-7"
+            >Any Questions?
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center py-5 md:w-[500px]">
+      <Image
+        src={HeroIlust}
+        alt="Hero Ilustration"
+        loading="eager"
+        class={"bg-slate-500 w-full rounded-3xl"}
+      />
+    </div>
+  </div>
+</Section>

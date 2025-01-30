@@ -37,7 +37,7 @@ const { index, title, description } = Astro.props;
     aria-labelledby={`${title} accordion__item menu button `}
     class="accordion__content px-[60px]"
   >
-    <div class="w-full h-[2px] bg-black"></div>
+    <div class="w-full h-[2px] bg-neutral-700"></div>
     <p class="prose mb-4 mt-1 max-w-full pt-5 pb-[60px] transition-[height]">
       {description}
     </p>
@@ -97,7 +97,8 @@ const { index, title, description } = Astro.props;
 
               if (otherAccordionToggle && otherAccordionIcon) {
                 otherAccordionItem.classList.remove("active");
-                otherAccordionItem.classList.remove("bg-green");
+                otherAccordionItem.classList.remove("bg-dark");
+                otherAccordionItem.classList.remove("text-gray");
                 otherAccordionToggle.setAttribute("aria-expanded", "false");
                 otherAccordionItem.style.height = "160px";
                 otherAccordionIcon.classList.remove("rotate-180");
@@ -113,7 +114,8 @@ const { index, title, description } = Astro.props;
 
             // Set height according to content
             accordionItem.style.height = accordionItem.scrollHeight + "px";
-            accordionItem.classList.add("bg-green");
+            accordionItem.classList.add("bg-dark");
+            accordionItem.classList.add("text-gray");
             accordionIcon.classList.add("rotate-180");
             accordionIcon.classList.add("collapsed");
           } else {
@@ -124,7 +126,8 @@ const { index, title, description } = Astro.props;
             // height is 60, because the toggle's height is 60, the content is hidden
             accordionItem.style.height = "160px";
             accordionIcon.classList.remove("rotate-180");
-            accordionItem.classList.remove("bg-green");
+            accordionItem.classList.remove("bg-dark");
+            accordionItem.classList.remove("text-gray");
             accordionIcon.classList.remove("collapsed");
           }
 
@@ -147,7 +150,8 @@ const { index, title, description } = Astro.props;
           !accordionItem.contains(event.target as Node)
         ) {
           accordionItem.classList.remove("active");
-          accordionItem.classList.remove("bg-green");
+          accordionItem.classList.remove("bg-dark");
+          accordionItem.classList.remove("text-gray");
           accordionToggle.setAttribute("aria-expanded", "false");
 
           // Reset height. Overflow gets hidden
