@@ -67,11 +67,11 @@ export function RoadmapComponent() {
       >
         <Background />
         <Controls showInteractive={false} />
-        <MiniMap
+        {/* <MiniMap
           nodeColor={nodeColor}
           nodeBorderRadius={10}
           maskColor="#f3f3f3"
-        />
+        /> */}
       </ReactFlow>
     </div>
   );
