@@ -29,4 +29,10 @@ export const initialEdges = [
   { id: "eB0-B1", source: "B0", target: "B1" },
   { id: "eB0-B2", source: "B0", target: "B2" },
   { id: "eB2-B3", source: "B2", target: "B3", label: "Interactive" },
+
+  { id: "eC0-C1", source: "C0", target: "C1" },
+  { id: "eC1-C2", source: "C1", target: "C2" },
+  { id: "eC1-C3", source: "C1", target: "C3" },
+  { id: "eC1-C4", source: "C1", target: "C4" },
+  { id: "eC1-C5", source: "C1", target: "C5" },
 ];
