@@ -13,7 +13,7 @@ const { index, title, description } = Astro.props;
   class="accordion__item group h-[160px] bg-[#F3F3F3] overflow-hidden w-full transition-all duration-500 mb-[30px] rounded-[45px] border border-dark shadow-[0px_5px_0px_#191a23]"
 >
   <button
-    class="accordion__toggle w-full h-[160px] flex items-center justify-between p-[60px] cursor-pointer"
+    class="accordion__toggle w-full h-[160px] flex items-center text-start justify-between py-[60px] px-7 sm:px-[60px] cursor-pointer"
     id={`${title} accordion__item menu button`}
     aria-expanded="false"
     aria-controls={`${title} accordion__item menu content`}
