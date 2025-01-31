@@ -1,0 +1,113 @@
+---
+// components/Drawer.astro
+interface Props {
+  id: string;
+  title?: string;
+  position?: "left" | "right";
+  className?: string;
+}
+
+const { id, title = "", className = "" } = Astro.props;
+---
+
+<div
+  id={id}
+  class:list={[
+    "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full max-h-[75%] max-w-[75%]    scale-0 transition-all duration-400 bg-ctp-mantle rounded-2xl border border-ctp-surface0 z-40 ",
+    className,
+  ]}
+  tabindex="-1"
+  aria-labelledby={`${id}-label`}
+>
+  <div class="flex items-center justify-between p-4 shrink-0">
+    {
+      title && (
+        <h5 id={`${id}-label`} class="text-2xl font-semibold text-ctp-lavender">
+          {title}
+        </h5>
+      )
+    }
+    <button
+      type="button"
+      data-drawer-close
+      aria-controls={id}
+      class="text-ctp-overlay0 hover:text-ctp-text rounded-lg p-1.5"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- Content container - Update the div that wraps the <slot> -->
+  <div class="flex-1 overflow-y-auto custom-scrollbar relative pb-1">
+    <div class="h-full w-full flex items-center justify-center">
+      <!-- Added container -->
+      <slot />
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop -->
+<div
+  id={`${id}-backdrop`}
+  class="fixed inset-0 bg-ctp-base bg-opacity-50 z-30 hidden"
+  data-drawer-backdrop
+>
+</div>
+
+<script define:vars={{ id }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const drawer = document.getElementById(id);
+    const backdrop = document.getElementById(`${id}-backdrop`);
+    const toggleButtons = document.querySelectorAll(
+      `[data-drawer-target="${id}"]`
+    );
+    const closeButtons = drawer.querySelectorAll("[data-drawer-close]");
+
+    function openDrawer() {
+      drawer.classList.remove("scale-0");
+
+      drawer.classList.add("scale-100");
+
+      backdrop.classList.remove("hidden");
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove("scale-100");
+
+      drawer.classList.add("scale-0");
+
+      backdrop.classList.add("hidden");
+
+      document.body.style.overflow = "";
+    }
+
+    toggleButtons.forEach((button) => {
+      button.addEventListener("click", openDrawer);
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", closeDrawer);
+    });
+
+    backdrop.addEventListener("click", closeDrawer);
+
+    // Optional: Close on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !backdrop.classList.contains("hidden")) {
+        closeDrawer();
+      }
+    });
+  });
+</script>

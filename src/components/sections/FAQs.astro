@@ -1,0 +1,14 @@
+---
+import Accordion from "../ui/Accordion.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+const description = "";
+---
+
+<Section id="FAQs" className="px-6 md:px-10">
+  <div class="mt-[140px] pb-12">
+    <SectionTitle sectionTitle="FAQs" description={description} />
+    <Accordion />
+  </div>
+</Section>

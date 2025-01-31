@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+import { RoadmapComponent } from "../ui/xyflow/FlowEditor";
+
+const description = "Step-by-Step Guide to complete our first Bootcamp";
+
+const roadmapEntries = await getCollection("roadmap");
+const contentMap = Object.fromEntries(
+  roadmapEntries.map((entry) => [entry.data.nodeId, entry])
+);
+
+// console.log(contentMap);
+---
+
+<Section id="roadmap">
+  <div class="mt-[140px]">
+    <SectionTitle
+      sectionTitle="Roadmap"
+      description={description}
+      isDescription={false}
+    />
+    <div class="border border-dark rounded-2xl">
+      <div class="hidden md:block">
+        <RoadmapComponent client:visible />
+      </div>
+      <div class="block md:hidden">
+        <iframe src="/roadmap.pdf" class="w-full h-[70vh] rounded-2xl"></iframe>
+      </div>
+    </div>
+  </div>
+</Section>
