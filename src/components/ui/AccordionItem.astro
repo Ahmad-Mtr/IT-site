@@ -19,7 +19,9 @@ const { index, title, description } = Astro.props;
     aria-controls={`${title} accordion__item menu content`}
   >
     <div class="flex items-center gap-[25px]">
-      <span class="hidden sm:block sm:text-6xl">0{index}</span>
+      <span class="hidden sm:block sm:text-6xl"
+        >{index < 10 ? `0${index}` : index}</span
+      >
       {title}
     </div>
     <div
