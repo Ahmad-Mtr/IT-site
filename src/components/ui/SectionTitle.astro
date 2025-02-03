@@ -1,8 +1,21 @@
 ---
-const { sectionTitle, description, isDescription, cln = "" } = Astro.props;
+interface Props {
+  sectionTitle: string;
+  description?: string;
+  isDescription?: boolean;
+  cln?: string;
+  titleClass?: string;
+}
+const {
+  sectionTitle,
+  description,
+  isDescription,
+  cln = "",
+  titleClass = "",
+} = Astro.props;
 ---
 
-<div class="flex flex-col items-center gap-10 mb-20 sm:flex-row">
+<div class=`flex flex-col items-center gap-10 mb-20 sm:flex-row ${titleClass}`>
   <h2 class=`yellowhead text-center sm:text-left text-3xl sm:text-4xl ${cln}`>
     {sectionTitle}
   </h2>
