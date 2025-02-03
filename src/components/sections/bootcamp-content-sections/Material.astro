@@ -1,0 +1,28 @@
+---
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import Section from "../Section.astro";
+
+const description =
+  "All the material you discussed in the online meetings to complete the bootcamp";
+---
+
+<Section id="material">
+  <div class="my-[64px]">
+    <SectionTitle
+      sectionTitle="Material (updated daily)"
+      description={description}
+      isDescription={false}
+      titleClass="mb-10"
+    />
+    <span class="font-bold text-xl">Day 0</span>
+    <div class="">
+      <span class="blackhead ml-2 text-lg">L0</span>
+    </div>
+    <a
+      href="/bootcamp/day-0.pdf"
+      class="class-link hover:class-link-hover ml-4"
+    >
+      Day 0 Content</a
+    >
+  </div>
+</Section>

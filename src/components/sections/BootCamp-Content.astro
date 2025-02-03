@@ -1,0 +1,19 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+const description = "Todo List";
+---
+
+<Section id="bootcamp-content">
+  <div class="mt-[120px]">
+    <SectionTitle
+      sectionTitle="Bootcamp Content & Todo List"
+      description={description}
+      isDescription={false}
+      titleClass="mb-10"
+    />
+    <a href="/events/content" class="class-link hover:class-link-hover"
+      >All Content Files from daily material, and todo list here.
+    </a>
+  </div>
+</Section>
