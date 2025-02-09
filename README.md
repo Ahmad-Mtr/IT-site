@@ -43,3 +43,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Credits
 This project was made using [Positivus](https://github.com/manulthanura/Positivus) Theme, along with Graphics from [Storyset](https://storyset.com) and Icons from [Iconify](https://icon-sets.iconify.design/)
+
+---
+
+<p align="center">
+  Made with ❤️ by GJU IT Club
+</p>
