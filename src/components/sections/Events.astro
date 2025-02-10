@@ -8,15 +8,17 @@ const cards = [
     index: 0,
     title: "Das Bootcamp",
     description:
-      "The Ultimate Bootcamp that no one is expecting from this club, is happening soon!",
+      "The Ultimate Bootcamp that no one is expecting from this club, currently happening!",
     link: "/events/bootcamp",
     isLinked: true,
+    date: "15.FEB-PRESENT",
   },
 ];
 
 import larrow from "../../assets/icon3-yellow.svg";
 import SectionTitle from "../ui/SectionTitle.astro";
 import { fade } from "astro:transitions";
+import { date } from "astro:schema";
 
 const isNew = true;
 const str1 = isNew
@@ -26,7 +28,7 @@ const str1 = isNew
 
 <Section id="events">
   <SectionTitle
-    sectionTitle="Upcoming Events"
+    sectionTitle="Events"
     description=""
     isDescription={false}
     cln="mt-20"
@@ -35,21 +37,24 @@ const str1 = isNew
     {
       cards.map((card) => (
         <Card>
-          <div class="flex h-full bg-dark text-gray rounded-[45px] m-[1px] p-[40px] md:p-[60px]">
-            <div class="flex flex-col gap-5">
+          <div class="flex h-full bg-dark text-gray rounded-[45px] m-[1px] p-[40px] md:p-[60px] ">
+            <div class="flex flex-col justify-around space-y-3">
               <h4 class="font-semibold">{card.title}</h4>
               <p>{card.description}</p>
-              {card.isLinked && (
-                <a
-                  href={card.link}
-                  class="flex items-center gap-[15px] hover:class-link-hover class-link"
-                >
-                  <span class="text-yellow ">Event Info</span>
-                  <picture>
-                    <Image src={larrow} alt="Arrow pointing up right" />
-                  </picture>
-                </a>
-              )}
+              <div class="justify-between flex flex-row gap-5 pt-2">
+                {card.isLinked && (
+                  <a
+                    href={card.link}
+                    class="flex items-center gap-[15px] hover:class-link-hover class-link"
+                  >
+                    <span class="text-yellow ">Event Info</span>
+                    <picture>
+                      <Image src={larrow} alt="Arrow pointing up right" />
+                    </picture>
+                  </a>
+                )}
+                <div class="text-end font-medium text-base ">{card.date}</div>
+              </div>
             </div>
           </div>
         </Card>
