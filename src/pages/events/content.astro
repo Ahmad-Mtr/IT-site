@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Todos from "../../components/sections/bootcamp-content-sections/Todos.astro";
 import Material from "../../components/sections/bootcamp-content-sections/Material.astro";
+import Certificates from "@/components/sections/bootcamp-content-sections/Certificates.astro";
 ---
 
 <!-- <div id="app"></div> -->
@@ -9,6 +10,7 @@ import Material from "../../components/sections/bootcamp-content-sections/Materi
   title="Bootcamp Content Files"
   description="Find all Content files related to daily material, updates, and todo list here."
 >
+  <Certificates />
   <Todos />
   <Material />
 </MainLayout>

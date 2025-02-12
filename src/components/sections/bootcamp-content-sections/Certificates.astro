@@ -1,0 +1,48 @@
+---
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import Section from "../Section.astro";
+
+const description = "Certificates Instructions to complete the bootcamp";
+---
+
+<Section id="certificates">
+  <div class="mt-[64px]">
+    <SectionTitle
+      sectionTitle="Certificates"
+      description={description}
+      isDescription={false}
+      titleClass="mb-8"
+    />
+    <div class="">
+      
+        <div class="h-4"></div>
+      <span class="font-bold text-xl">Certificate of Participation</span>
+      <ul class="list-disc space-y-2">
+        <span class="blackhead ml-2 text-lg">L0</span>
+        <li class="text-lg ml-5">
+          Watch the cert. instructions on onedrive (link on discord)
+        </li>
+
+        <li class="text-lg ml-5">
+          Submit your first pull request this <a
+            href="https://github.com/GJU-IT-Club/git-certificate"
+            class="class-link hover:class-link-hover">Repo</a
+          > following the instructions (due ~ 15.feb)
+        </li>
+      </ul>
+
+      <div class="h-4"></div>
+      <span class="font-bold text-xl">Certificate of Completion</span>
+      <ul class="list-disc space-y-2">
+        <span class="blackhead ml-2 text-lg">L1 A</span>
+        <li class="text-lg ml-5">
+          Watch the cert. instructions on onedrive (link on discord)
+        </li>
+
+        <li class="text-lg ml-5">
+          Submit your Website link to the <code>#bootcamp-general</code> in our Discord following the instructions (due ~ 28.feb)
+        </li>
+      </ul>
+    </div>
+  </div>
+</Section>
