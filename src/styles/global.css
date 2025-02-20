@@ -154,6 +154,24 @@
       @apply font-medium bg-yellow text-black rounded-[7px] px-[7px] transform ;
     }
   }
+  
+  /* for footer links */
+  .footer-link {
+    @apply text-center transition-all duration-200;
+  }
+
+  .footer-link:hover {
+    @apply transform scale-105 text-primary;
+  }
+
+  /* Styling for footer icons */
+  .footer-icon {
+    @apply transition-opacity duration-200; /* Add smooth opacity transition */
+  }
+
+  .footer-link:hover .footer-icon {
+    @apply opacity-80; /* Fade icons */
+  }
 }
 
 /* custom scrollbar */
