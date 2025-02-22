@@ -153,7 +153,19 @@
     .class-link-alt-hover{
       @apply font-medium bg-yellow text-black rounded-[7px] px-[7px] transform ;
     }
+     /* For footer links */
+.footer-link {
+  @apply text-center transition-all duration-200;
+}
+
+.footer-link:hover {
+  @apply transform scale-90 translate-y-0.5 ; /* Subtle scale and Y-axis translation */
+}
   }
+}
+::selection {
+  background-color: #fde047; 
+  color: black;
 }
 
 /* custom scrollbar */

@@ -44,42 +44,33 @@ const links = [
 
 <section class="sm:px-5">
   <div class="w-full max-w-[1240px] mx-auto">
-    <div
-      class="px-[15px] bg-dark text-gray py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
-    >
+    <div class="px-[15px] bg-dark text-gray py-[55px] lg:px-[60px] sm:rounded-t-[45px]">
       <div>
-        <div
-          class="flex flex-col lg:flex-row gap-7 items-center justify-between"
-        >
+        <div class="flex flex-col lg:flex-row gap-7 items-center justify-between">
           <picture class="">
             <a href="/#home">
               <Image src={Logo} alt="Logo for IT Club" />
             </a>
           </picture>
           <ul class="flex flex-col sm:flex-row gap-5">
-            {
-              links.map((link) => {
-                return (
-                  <li class="text-center">
-                    <a
-                      class="class-link-alt hover:class-link-alt-hover"
-                      href={link.href}
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                );
-              })
-            }
+            {links.map((link) => {
+              return (
+                <li class="text-center">
+                  <a class="class-link-alt hover:class-link-alt-hover transform scale-105" href={link.href}>
+                    {link.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <ul class="flex gap-5">
             {
               logos.map((logo) => {
                 return (
-                  <li>
+                  <li class="footer-link">
                     <a href={logo.link} target="_blank">
                       <picture>
-                        <Image src={logo.src} alt={logo.name} />
+                        <Image src={logo.src} alt={logo.name} class="footer-icon"/>
                       </picture>
                     </a>
                   </li>
